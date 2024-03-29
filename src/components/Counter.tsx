@@ -1,17 +1,13 @@
-// components/Counter.tsx
-import React, { useState, useEffect } from 'react';
+// components/Counter.js
+import { useState, useEffect } from 'react';
 import "../styles.css"
-interface CounterProps {
-  initialCount: number;
-}
-const Counter: React.FC<CounterProps> = ({initialCount}) => {
-  const [count, setCount] = useState<number>(initialCount);
+
+export default function Counter({ initialCount }: { initialCount: number }) {
+  const [count, setCount] = useState(initialCount);
 
   useEffect(() => {
     document.title = `Count: ${count}`;
   }, [count]);
-
-  
 
   return (
     <div className="container">
@@ -20,8 +16,4 @@ const Counter: React.FC<CounterProps> = ({initialCount}) => {
       <button className="button" onClick={() => setCount(count + 1)}>Increment</button>
     </div>
   );
-};
-
-
-
-export default Counter;
+}

@@ -1,6 +1,6 @@
-// components/Posts.tsx
-import React, { useState, useEffect } from 'react';
-import "../styles.css"
+import { useState, useEffect } from 'react';
+import "../styles.css";
+
 interface Post {
   userId: number;
   id: number;
@@ -8,16 +8,17 @@ interface Post {
   body: string;
 }
 
-const Posts: React.FC = () => {
+export default function Posts() {
   const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then(response => response.json())
-      .then(data => setPosts(data))
+      .then((data: Post[]) => setPosts(data))
       .catch(error => console.error('Error fetching posts:', error));
     document.title = 'Recent Blog Posts';    
   }, []);  
+
   return (
     <div className="container">
       <h2>Recent Blog Posts</h2>
@@ -34,6 +35,4 @@ const Posts: React.FC = () => {
       </div>
     </div>
   );
-};
-
-export default Posts;
+}

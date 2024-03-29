@@ -1,8 +1,7 @@
 // components/Navigation.tsx
-import React from 'react';
 import { Link } from 'react-router-dom';
-import "../styles.css"
-const Navigation: React.FC = () => {
+
+export default function Navigation() {
   return (
     <nav>
       <ul>
@@ -13,4 +12,3 @@ const Navigation: React.FC = () => {
   );
 };
 
-export default Navigation;
