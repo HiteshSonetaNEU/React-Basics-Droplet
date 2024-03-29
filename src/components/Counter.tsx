@@ -1,4 +1,3 @@
-// components/Counter.js
 import { useState, useEffect } from 'react';
 import "../styles.css"
 

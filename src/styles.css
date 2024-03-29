@@ -4,7 +4,6 @@
     border: 1px solid #ddd;
   }
   
-  /* Button styles */
   .button {
     background-color: #007bff;
     color: #fff;
@@ -13,7 +12,6 @@
     cursor: pointer;
   }
   
-  /* Box styles */
   .styled-box {
     margin-top: 20px;
     padding: 10px;
